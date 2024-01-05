@@ -12,7 +12,7 @@ def jpg_to_bmp_func(cap):
      src_path = os.path.join(script_dir, 'captured_img')
 
      # bmp 이미지를 저장할 상대경로
-     dst_path = os.path.join(script_dir, 'changed_img')
+     dst_path = os.path.join(script_dir, 'captured_img')
      
      if not os.path.isdir(dst_path):  # 만약 존재하지 않는다면 디렉토리 생성
         os.mkdir(dst_path)

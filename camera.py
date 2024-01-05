@@ -1,6 +1,7 @@
 import os
 import cv2
 import jpg_to_bmp
+import resize_img
 
 def capture():
      capture = cv2.VideoCapture(0)
@@ -36,7 +37,11 @@ def capture():
                img_captured = cv2.imwrite(file_path, frame)
                capNum += 1
                
+               # jpg이미지를 bmp이미지로 변환
                jpg_to_bmp.jpg_to_bmp_func(capNum)
+               
+               # 이미지 해상도 변경
+               resize_img.resize_image(240, 180)
                
                break
                         
