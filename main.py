@@ -1,30 +1,10 @@
-import cv2
-import jpg_to_bmp
+import camera
+#import printer
 
-capture = cv2.VideoCapture(0)
+# 카메라 ON
+camera.capture() # bmp이미지 파일의 주소 전달
 
-if capture.isOpened() == False:
-      print("camera open failed")
-      exit()
+# 프린터 제어
+#printer_name = printer.list_printers() # 현재 연결된 프린터 목록 출력
+#printer.print_file(printer_name) # 지정한 프린터로 파일 출력
 
-capNum = int(0)
-while True:
-     ret, frame = capture.read()
-     
-     if not ret:
-          print("Can't read camera")
-          break;
-     
-     cv2.imshow("camera", frame)
-     
-     key = cv2.waitKey(1) & 0xFF
-     if key == ord('c'):
-          img_captured = cv2.imwrite(r'C:\Users\mok07\Desktop\Study\Project\vscode\Receipt_Camera\captured_img\captured_%03d.jpg' % capNum, frame)
-          capNum += 1;
-          
-          jpg_to_bmp.jpg_to_bmp_func(capNum)
-          
-     if key == ord('q'):
-          break;
-
-capture.release()
