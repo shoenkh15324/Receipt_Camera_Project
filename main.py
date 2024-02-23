@@ -1,6 +1,10 @@
 import camera
+<<<<<<< HEAD
+import printer
+=======
 import BLE
 #import printer
+>>>>>>> f9df0a73d4789ed0ade3d731778a1df040d36f2d
 
 # 카메라 ON
 camera.capture() # bmp이미지 파일의 주소 전달
@@ -9,6 +13,5 @@ camera.capture() # bmp이미지 파일의 주소 전달
 
 
 # 프린터 제어
-#printer_name = printer.list_printers() # 현재 연결된 프린터 목록 출력
-#printer.print_file(printer_name) # 지정한 프린터로 파일 출력
+printer.print_image()
 
